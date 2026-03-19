@@ -77,3 +77,7 @@ No son de autoría propia; se usaron con fines educativos dentro del marco del t
 
 **F. Miceli** — 4° C S.T.C., Instituto Politécnico Modelo  
 Trabajo Práctico N°1 — Materia: Videojuegos
+
+## 👨‍🏫 Profesor
+
+**Santiago Beitia**
