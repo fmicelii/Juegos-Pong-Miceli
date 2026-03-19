@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://cuvjlycx7kdxt"]
+
+[ext_resource type="PackedScene" uid="uid://dkitw4uiooyul" path="res://jugador_1/jugador_1.tscn" id="1_1hw3o"]
+[ext_resource type="Script" uid="uid://cavq7jd7rl7pa" path="res://pong/pong.gd" id="1_fif4v"]
+[ext_resource type="PackedScene" uid="uid://daphnd0yt8osf" path="res://jugador_2/jugador_2.tscn" id="2_g8uh0"]
+[ext_resource type="PackedScene" uid="uid://3odtc1bh6mmk" path="res://pelota/pelota.tscn" id="3_fif4v"]
+[ext_resource type="Texture2D" uid="uid://teajhh8y16pk" path="res://assets/wall-horizontal.png" id="4_g8uh0"]
+[ext_resource type="Texture2D" uid="uid://c5da7gipfikli" path="res://assets/middle-line.png" id="6_teprw"]
+[ext_resource type="FontFile" uid="uid://b6800717dyj8l" path="res://assets/alarm clock.ttf" id="7_one0h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fif4v"]
+size = Vector2(1188, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8uh0"]
+size = Vector2(83, 680)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teprw"]
+size = Vector2(39, 18.75)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gcr4s"]
+font = ExtResource("7_one0h")
+font_size = 70
+
+[node name="pong" type="Node2D" unique_id=1704457201]
+script = ExtResource("1_fif4v")
+
+[node name="jugador1" parent="." unique_id=722639977 instance=ExtResource("1_1hw3o")]
+
+[node name="jugador2" parent="." unique_id=447201265 instance=ExtResource("2_g8uh0")]
+
+[node name="pelota" parent="." unique_id=1914327007 instance=ExtResource("3_fif4v")]
+
+[node name="paredArriba" type="StaticBody2D" parent="." unique_id=1624284978]
+position = Vector2(640, 40)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="paredArriba" unique_id=883379047]
+texture = ExtResource("4_g8uh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredArriba" unique_id=1855684772]
+shape = SubResource("RectangleShape2D_fif4v")
+
+[node name="paredAbajo" type="StaticBody2D" parent="." unique_id=1324386108]
+position = Vector2(640, 680)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="paredAbajo" unique_id=2135569851]
+texture = ExtResource("4_g8uh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredAbajo" unique_id=1677118823]
+shape = SubResource("RectangleShape2D_fif4v")
+
+[node name="arcoIzquierda" type="Area2D" parent="." unique_id=1461371323]
+position = Vector2(-76, 40)
+metadata/_edit_group_ = true
+
+[node name="fondo" type="CollisionShape2D" parent="arcoIzquierda" unique_id=122582430]
+position = Vector2(31.5, 331)
+shape = SubResource("RectangleShape2D_g8uh0")
+debug_color = Color(0.9711644, 0, 0.45304543, 0.41960785)
+
+[node name="fondoArriba" type="CollisionShape2D" parent="arcoIzquierda" unique_id=1225429740]
+position = Vector2(99, -20)
+shape = SubResource("RectangleShape2D_teprw")
+
+[node name="fondoAbajo" type="CollisionShape2D" parent="arcoIzquierda" unique_id=1740795156]
+position = Vector2(97.5, 661.25)
+shape = SubResource("RectangleShape2D_teprw")
+
+[node name="arcoDerecha" type="Area2D" parent="." unique_id=483916611]
+position = Vector2(1360, 680)
+rotation = 3.1415927
+metadata/_edit_group_ = true
+
+[node name="fondo" type="CollisionShape2D" parent="arcoDerecha" unique_id=817117332]
+position = Vector2(31.5, 331)
+shape = SubResource("RectangleShape2D_g8uh0")
+debug_color = Color(0.9711644, 0, 0.45304543, 0.41960785)
+
+[node name="fondoArriba" type="CollisionShape2D" parent="arcoDerecha" unique_id=1496510863]
+position = Vector2(99, -20)
+shape = SubResource("RectangleShape2D_teprw")
+
+[node name="fondoAbajo" type="CollisionShape2D" parent="arcoDerecha" unique_id=2065935780]
+position = Vector2(97.5, 661.25)
+shape = SubResource("RectangleShape2D_teprw")
+
+[node name="MiddleLine" type="Sprite2D" parent="." unique_id=1600818174]
+position = Vector2(640, 360)
+texture = ExtResource("6_teprw")
+
+[node name="marcador1" type="Label" parent="." unique_id=127640040]
+offset_left = 519.0
+offset_top = 84.0
+offset_right = 587.0
+offset_bottom = 158.0
+text = "0"
+label_settings = SubResource("LabelSettings_gcr4s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="marcador2" type="Label" parent="." unique_id=1610820749]
+offset_left = 712.0
+offset_top = 84.0
+offset_right = 780.0
+offset_bottom = 158.0
+text = "0"
+label_settings = SubResource("LabelSettings_gcr4s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="arcoIzquierda" to="." method="_on_arco_izquierda_body_entered"]
+[connection signal="body_entered" from="arcoDerecha" to="." method="_on_arco_derecha_body_entered"]

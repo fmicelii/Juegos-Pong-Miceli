@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Juego-Pong"
-run/main_scene="uid://yl40j2ywar33"
+run/main_scene="uid://cuvjlycx7kdxt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [physics]
 
