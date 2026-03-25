@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://r55kkbb5rqeg" path="res://assets/ball.png" id="1_4665q"]
 [ext_resource type="Script" uid="uid://d3p71cl5hn2px" path="res://pelota/pelota.gd" id="1_ph2ik"]
+[ext_resource type="AudioStream" uid="uid://m8fgnbebm62p" path="res://musica/falloutLock.mp3" id="3_hdfjl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ph2ik"]
 radius = 11.045361
@@ -16,3 +17,6 @@ texture = ExtResource("1_4665q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=336740557]
 shape = SubResource("CircleShape2D_ph2ik")
+
+[node name="falloutLock" type="AudioStreamPlayer" parent="." unique_id=1334170140]
+stream = ExtResource("3_hdfjl")

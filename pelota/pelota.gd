@@ -26,4 +26,5 @@ func _physics_process(delta):
 	var infoDeColision = move_and_collide(velocity * delta)
 	
 	if infoDeColision:
+		$falloutLock.play()
 		velocity = velocity.bounce(infoDeColision.get_normal())
