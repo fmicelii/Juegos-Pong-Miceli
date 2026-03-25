@@ -6,6 +6,14 @@ Clon del clásico arcade **Pong** desarrollado en **Godot 4.6** con **GDScript**
 
 ---
 
+## � Estética
+
+La versión **versionFallout** cuenta con una identidad visual y sonora completamente personalizada, inspirada en la estética de la saga **Fallout**: paleta de colores con verdes fosforescentes, tipografía retro terminal y una atmósfera post-apocalíptica.
+
+Todos los assets gráficos (sprites de la pelota, paletas, paredes y línea central) fueron **creados y diseñados por el autor** del proyecto.
+
+---
+
 ## 🎮 ¿Cómo se juega?
 
 Es un juego de 2 "equipos": un jugador humano contra la CPU.  
@@ -37,18 +45,24 @@ El primer jugador que anote gana el punto y la pelota se reinicia al centro.
 
 ```
 Juegos-Pong-Miceli/
-├── assets/               # Sprites, fuentes y texturas del juego
+├── assets/               # Sprites y fuentes del juego (creados por el autor)
 │   ├── ball.png              # Pelota
-│   ├── paddle-blue.png       # Paleta del Jugador 1 (azul)
-│   ├── paddle-red.png        # Paleta del Jugador 2 / CPU (roja)
+│   ├── paddle.png            # Paleta de los jugadores
 │   ├── wall-horizontal.png   # Paredes superior e inferior
 │   ├── wall-vertical.png     # Paredes laterales
 │   ├── middle-line.png       # Línea central
 │   └── alarm clock.ttf       # Fuente del marcador
+├── musica/               # Sonidos y música inspirados en Fallout
+│   ├── soundtrackRockIngles.mp3  # Música de fondo
+│   ├── falloutXp.mp3             # Sonido al anotar un gol
+│   ├── falloutSelection.mp3      # Sonido de navegación en menú
+│   ├── falloutLock.mp3           # Efecto de sonido
+│   └── fahh.mp3                  # Efecto de sonido
 ├── jugador_1/            # Escena y script del Jugador 1 (humano)
 ├── jugador_2/            # Escena y script del Jugador 2 (CPU)
 ├── pelota/               # Escena y script de la pelota
 ├── pong/                 # Escena principal + lógica de puntuación
+├── menu/                 # Menú principal y pantalla de opciones
 └── project.godot         # Configuración del proyecto Godot
 ```
 
@@ -60,16 +74,6 @@ Juegos-Pong-Miceli/
 2. Cloná o descargá este repositorio.
 3. Abrí Godot, hacé clic en **"Importar"** y seleccioná el archivo `project.godot`.
 4. Presioná **F5** (o el botón ▶️) para ejecutar el juego.
-
----
-
-## 🎨 Créditos de assets
-
-Los assets gráficos y la fuente utilizados en este proyecto fueron obtenidos del repositorio:
-
-> **[indierama/PongTutorial](https://github.com/indierama/PongTutorial/blob/main/assets.zip)**
-
-No son de autoría propia; se usaron con fines educativos dentro del marco del trabajo práctico.
 
 ---
 
