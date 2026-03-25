@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dyomnekwfdxr8"]
+
+[ext_resource type="Script" uid="uid://dr3jnk2q50sp1" path="res://menu/menu.gd" id="1_j0t7f"]
+[ext_resource type="AudioStream" uid="uid://c5vpl3wlv1ojf" path="res://musica/falloutSelection.mp3" id="2_g18jx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nwqt"]
+bg_color = Color(0, 0.019607844, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_jc4t8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbjm4"]
+bg_color = Color(0, 0.019607844, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svuvw"]
+bg_color = Color(0.08235294, 0.972549, 0.09411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0t7f"]
+bg_color = Color(0, 0.019607844, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g18jx"]
+bg_color = Color(0.08235294, 0.972549, 0.09411765, 1)
+
+[node name="menu" type="Control" unique_id=1764897084]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_j0t7f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=121928975]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.68235296)
+metadata/_edit_lock_ = true
+
+[node name="MenuPrincipalContenedor" type="PanelContainer" parent="." unique_id=1676881128]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -47.0
+offset_right = 163.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6nwqt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPrincipalContenedor" unique_id=938740393]
+layout_mode = 2
+alignment = 1
+
+[node name="jugar" type="Button" parent="MenuPrincipalContenedor/VBoxContainer" unique_id=201542765]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.08235294, 0.972549, 0.09411765, 1)
+theme_override_colors/font_hover_color = Color(0, 0.019607844, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_jc4t8")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_pbjm4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_svuvw")
+text = "JUGAR"
+
+[node name="salir" type="Button" parent="MenuPrincipalContenedor/VBoxContainer" unique_id=638979488]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.08235294, 0.972549, 0.09411765, 1)
+theme_override_colors/font_hover_color = Color(0, 0.019607844, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_jc4t8")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_j0t7f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g18jx")
+text = "SALIR"
+
+[node name="falloutSelection" type="AudioStreamPlayer" parent="." unique_id=697012689]
+stream = ExtResource("2_g18jx")
+
+[connection signal="mouse_entered" from="MenuPrincipalContenedor/VBoxContainer/jugar" to="." method="_on_jugar_mouse_entered"]
+[connection signal="pressed" from="MenuPrincipalContenedor/VBoxContainer/jugar" to="." method="_on_jugar_pressed"]
+[connection signal="mouse_entered" from="MenuPrincipalContenedor/VBoxContainer/salir" to="." method="_on_salir_mouse_entered"]
+[connection signal="pressed" from="MenuPrincipalContenedor/VBoxContainer/salir" to="." method="_on_salir_pressed"]
