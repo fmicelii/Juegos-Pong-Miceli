@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://byn8bh1ejwbji"]
 
-[ext_resource type="Script" uid="uid://djh5g5q6lgqsq" path="res://menu/opciones.gd" id="1_uqm0t"]
+[sub_resource type="GDScript" id="GDScript_tir5l"]
+script/source = "extends Control
+
+
+func _on_atras_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://menu/menu.tscn\")
+"
 
 [sub_resource type="FontVariation" id="FontVariation_jc4t8"]
 
@@ -17,18 +23,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uqm0t")
+script = SubResource("GDScript_tir5l")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=579121916]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1937246532]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.11310405, 0.17924136, 0.24553716, 1)
+color = Color(0, 0, 0, 0.54901963)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=397400043]
+process_mode = 2
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

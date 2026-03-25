@@ -10,25 +10,36 @@ bg_color = Color(0.38039216, 0.29411766, 0.43137255, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g18jx"]
 bg_color = Color(0.2780578, 0.21011436, 0.31808728, 1)
 
+[sub_resource type="FontVariation" id="FontVariation_j0t7f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nwqt"]
+bg_color = Color(0.38039216, 0.29411766, 0.43137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbjm4"]
+bg_color = Color(0.2780578, 0.21011436, 0.31808728, 1)
+
 [node name="menu" type="Control" unique_id=1764897084]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_j0t7f")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=579121916]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=121928975]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.11310405, 0.17924136, 0.24553716, 1)
+color = Color(0, 0, 0, 0.54901963)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=397400043]
+[node name="MenuPrincipalContenedor" type="VBoxContainer" parent="." unique_id=397400043]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -36,14 +47,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -165.0
-offset_top = -90.0
+offset_top = -73.0
 offset_right = 165.0
-offset_bottom = 90.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="jugar" type="Button" parent="VBoxContainer" unique_id=201542765]
+[node name="jugar" type="Button" parent="MenuPrincipalContenedor" unique_id=201542765]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_jc4t8")
 theme_override_font_sizes/font_size = 30
@@ -51,7 +62,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_j0t7f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g18jx")
 text = "JUGAR"
 
-[node name="opciones" type="Button" parent="VBoxContainer" unique_id=10705542]
+[node name="opciones" type="Button" parent="MenuPrincipalContenedor" unique_id=10705542]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_jc4t8")
 theme_override_font_sizes/font_size = 30
@@ -59,7 +70,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_j0t7f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g18jx")
 text = "OPCIONES"
 
-[node name="salir" type="Button" parent="VBoxContainer" unique_id=638979488]
+[node name="salir" type="Button" parent="MenuPrincipalContenedor" unique_id=638979488]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_jc4t8")
 theme_override_font_sizes/font_size = 30
@@ -67,6 +78,48 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_j0t7f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g18jx")
 text = "SALIR"
 
-[connection signal="pressed" from="VBoxContainer/jugar" to="." method="_on_jugar_pressed"]
-[connection signal="pressed" from="VBoxContainer/opciones" to="." method="_on_opciones_pressed"]
-[connection signal="pressed" from="VBoxContainer/salir" to="." method="_on_salir_pressed"]
+[node name="OpcionesContenedor" type="VBoxContainer" parent="." unique_id=1172930003]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -73.0
+offset_right = 165.5
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+metadata/_edit_group_ = true
+
+[node name="musica" type="Button" parent="OpcionesContenedor" unique_id=241606396]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_j0t7f")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_6nwqt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pbjm4")
+text = "MUSICA"
+
+[node name="resolucion" type="Button" parent="OpcionesContenedor" unique_id=1421591507]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_j0t7f")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_6nwqt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pbjm4")
+text = "RESOLUCIÓN"
+
+[node name="atras" type="Button" parent="OpcionesContenedor" unique_id=1879932499]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_j0t7f")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_6nwqt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pbjm4")
+text = "ATRÁS"
+
+[connection signal="pressed" from="MenuPrincipalContenedor/jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="MenuPrincipalContenedor/opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="MenuPrincipalContenedor/salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="OpcionesContenedor/atras" to="." method="_on_atras_pressed"]
