@@ -70,7 +70,7 @@ theme_override_fonts/font = SubResource("FontVariation_jc4t8")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_pbjm4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_svuvw")
-text = "JUGAR"
+text = "REANUDAR"
 
 [node name="salir" type="Button" parent="MenuPrincipalContenedor/VBoxContainer" unique_id=638979488]
 layout_mode = 2
