@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dr3jnk2q50sp1" path="res://menu/menu.gd" id="1_j0t7f"]
 [ext_resource type="AudioStream" uid="uid://c5vpl3wlv1ojf" path="res://musica/falloutSelection.mp3" id="2_g18jx"]
+[ext_resource type="Texture2D" uid="uid://b1e361ixhlfpi" path="res://assets/Pip-Boy_3000.png" id="3_6nwqt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nwqt"]
 bg_color = Color(0, 0.019607844, 0, 1)
@@ -41,7 +42,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.68235296)
-metadata/_edit_lock_ = true
 
 [node name="MenuPrincipalContenedor" type="PanelContainer" parent="." unique_id=1676881128]
 layout_mode = 1
@@ -82,6 +82,11 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_j0t7f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g18jx")
 text = "SALIR"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1770260103]
+position = Vector2(-22, 89)
+scale = Vector2(0.5838402, 0.54407406)
+texture = ExtResource("3_6nwqt")
 
 [node name="falloutSelection" type="AudioStreamPlayer" parent="." unique_id=697012689]
 stream = ExtResource("2_g18jx")

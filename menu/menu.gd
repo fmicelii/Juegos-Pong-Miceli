@@ -2,7 +2,6 @@ extends Control
 
 # referenciando a lo que esta en el menu
 @onready var menu_principal = $MenuPrincipalContenedor
-@onready var opciones = $OpcionesContenedor
 
 
 func _on_jugar_pressed() -> void:
