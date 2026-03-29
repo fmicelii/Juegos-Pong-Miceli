@@ -18,7 +18,6 @@ Todos los assets gráficos (sprites de la pelota, paletas, paredes y línea cent
 
 Es un juego de 2 "equipos": un jugador humano contra la CPU.  
 El objetivo es meter la pelota en el arco del oponente.  
-El primer jugador que anote gana el punto y la pelota se reinicia al centro.
 
 ### Controles
 
@@ -27,7 +26,7 @@ El primer jugador que anote gana el punto y la pelota se reinicia al centro.
 | Mover paleta **arriba** | ⬆️ Flecha Arriba |
 | Mover paleta **abajo** | ⬇️ Flecha Abajo |
 
-> **Jugador 2** es controlado por la CPU: su paleta sigue automáticamente la posición vertical de la pelota.
+> **Jugador 2** es controlado por la CPU.
 
 ---
 
@@ -38,33 +37,6 @@ El primer jugador que anote gana el punto y la pelota se reinicia al centro.
 | [Godot Engine](https://godotengine.org/) | 4.6 |
 | GDScript | — |
 | Resolución | 1280 × 720 px |
-
----
-
-## 📁 Estructura del proyecto
-
-```
-Juegos-Pong-Miceli/
-├── assets/               # Sprites y fuentes del juego (creados por el autor)
-│   ├── ball.png              # Pelota
-│   ├── paddle.png            # Paleta de los jugadores
-│   ├── wall-horizontal.png   # Paredes superior e inferior
-│   ├── wall-vertical.png     # Paredes laterales
-│   ├── middle-line.png       # Línea central
-│   └── alarm clock.ttf       # Fuente del marcador
-├── musica/               # Sonidos y música inspirados en Fallout
-│   ├── soundtrackRockIngles.mp3  # Música de fondo
-│   ├── falloutXp.mp3             # Sonido al anotar un gol
-│   ├── falloutSelection.mp3      # Sonido de navegación en menú
-│   ├── falloutLock.mp3           # Efecto de sonido
-│   └── fahh.mp3                  # Efecto de sonido
-├── jugador_1/            # Escena y script del Jugador 1 (humano)
-├── jugador_2/            # Escena y script del Jugador 2 (CPU)
-├── pelota/               # Escena y script de la pelota
-├── pong/                 # Escena principal + lógica de puntuación
-├── menu/                 # Menú principal y pantalla de opciones
-└── project.godot         # Configuración del proyecto Godot
-```
 
 ---
 
